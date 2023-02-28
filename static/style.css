@@ -1,0 +1,239 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: rgb(230, 240, 236);
+}
+
+header.jumbotron {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  width: 100%;
+  height: 180px;
+  background-image: url("EUROSAT.jpg");
+}
+
+header.jumbotron::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+header.jumbotron h1 {
+  display: flex;
+  align-items: center;
+  font-size: 3rem;
+  letter-spacing: 3px;
+  color: white;
+  z-index: 2;
+}
+
+main {
+  display: flex;
+  width: 100%;
+  min-height: 470px;
+  border: 1px solid black;
+}
+
+main > section {
+  flex-grow: 10;
+  padding: 20px;
+}
+
+main > aside {
+  flex-grow: 2;
+  margin: 15px;
+  height: min-content;
+  overflow: hidden;
+  border-radius: 15px;
+  background-color: white;
+  border: 1px solid #aaa;
+}
+
+aside h2 {
+  display: block;
+  padding: 12px 20px;
+  font-size: 1rem;
+  background-color: rgb(230, 230, 230);
+}
+
+aside ul {
+  display: block;
+  width: 100%;
+}
+
+aside li {
+  display: block;
+  padding: 4px 20px;
+  text-align: left;
+  line-height: 1.5rem;
+  list-style: none;
+  border-bottom: 1px solid #aaa;
+  color: #333;
+}
+
+aside li:first-child {
+  border-top: 1px solid #aaa;
+}
+
+aside li:last-child {
+  padding-bottom: 8px;
+}
+
+aside li abbr {
+  /* color: #777; */
+  color: rgb(31, 107, 170);
+  font-weight: bold;
+}
+
+.tab-links {
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0;
+}
+
+.tab-link {
+  display: inline-block;
+  margin: 0;
+  padding: 8px 12px;
+  border: none;
+  border-bottom: 4px solid #dadada;
+  font-size: 0.9rem;
+  letter-spacing: 0.8px;
+  background-color: #eee;
+  color: #121212;
+}
+
+.tab-link:hover {
+  background-color: #ddd;
+  border-bottom: 4px solid #cacaca;
+  cursor: pointer;
+}
+
+.tab-link.active {
+  border-bottom: 4px solid #04aa6d;
+  color: #09744c;
+}
+
+.tab-content {
+  display: none;
+  padding-top: 20px;
+}
+
+.tab-content h2 {
+  margin-bottom: 8px;
+}
+
+.hide {
+  display: none !important;
+}
+
+.display {
+  display: block !important;
+}
+
+#img-preview {
+  height: 180px;
+  width: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+input {
+  display: block;
+}
+
+.btn {
+  display: block;
+  padding: 6px 18px;
+  border: 0;
+  border-radius: 5px;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.8px;
+  color: white;
+  background-color: #04aa6d;
+}
+
+.btn:hover {
+  cursor: pointer;
+  background-color: #078053;
+}
+
+.btn#predict,
+.btn#classify {
+  margin-top: 5px;
+}
+
+.btn:disabled,
+.btn[disabled] {
+  cursor: wait;
+  background-color: #078053;
+}
+
+#classification-result,
+#evaluate-result {
+  margin-top: 30px;
+  padding: 18px;
+}
+
+#classification-result p {
+  font-weight: bold;
+}
+
+#classification-result .label {
+  font-weight: bold;
+  color: rgb(31, 107, 170);
+}
+
+#evaluate-result .acc {
+  color: rgb(31, 107, 170);
+}
+
+.my-table,
+.my-table th,
+.my-table td {
+  border-collapse: collapse;
+}
+
+.my-table tr:nth-child(even) {
+  background-color: bisque;
+}
+
+.my-table tr th {
+  background-color: #bbb;
+}
+
+.my-table th,
+.my-table td {
+  padding: 5px;
+  min-width: 3ch;
+  border: 1px solid black;
+  text-align: center;
+}
+
+#conf-matrix,
+#metrics {
+  margin-top: 20px;
+}
+
+#conf-matrix caption,
+#metrics caption {
+  margin-bottom: 8px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: rgb(31, 107, 170);
+}

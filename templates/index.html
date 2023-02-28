@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Land Classifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+
+<body>
+    <header class="jumbotron">
+        <h1>LandSat Classifier</h1>
+    </header>
+
+    <main>
+        <section>
+            <div class="tab-links">
+                <button class="tab-link active" data-contentId="single-content">
+                    Klasifikasi
+                </button>
+                <button class="tab-link" data-contentId="batch-content">
+                    Evaluasi Kinerja
+                </button>
+            </div>
+
+            <div id="single-content" class="tab-content display">
+                <h2>Pilih Gambar</h2>
+                <form action="" id="classification-form" enctype="multipart/form-data">
+                    <img id="img-preview" src="" alt="">
+                    <input id="img-input" name="img" type="file" accept="image/*, .jpg, .jpeg">
+                    <button class="btn" id="predict" style="margin-top: 10px;">Klasifikasi</button>
+                </form>
+
+                <section id="classification-result"></section>
+            </div>
+
+            <div id="batch-content" class="tab-content">
+                <h2>Pilih Folder</h2>
+                <form action="">
+                    <input type="file" name="folder-input" id="folder-input" webkitdirectory />
+                    <button class="btn" id="evaluate" style="margin-top: 10px;">Evaluasi</button>
+                </form>
+
+                <section id="evaluate-result"></section>
+            </div>
+
+        </section>
+        <aside>
+            <h2>Kelas yang tersedia:</h2>
+            <ul>
+                <li><abbr>[ANC]</abbr> Annual Crop</li>
+                <li><abbr>[FRS]</abbr> Forest</li>
+                <li><abbr>[HVG]</abbr> Herbaceous Vegetation</li>
+                <li><abbr>[HGW]</abbr> Highway</li>
+                <li><abbr>[IDS]</abbr> Industrial</li>
+                <li><abbr>[PST]</abbr> Pasture</li>
+                <li><abbr>[PMC]</abbr> Permanent Crop</li>
+                <li><abbr>[RSD]</abbr> Residential</li>
+                <li><abbr>[RVR]</abbr> River</li>
+                <li><abbr>[SLK]</abbr> Sea/Lake</li>
+            </ul>
+        </aside>
+    </main>
+
+
+</body>
+
+</html>
